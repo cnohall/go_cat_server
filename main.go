@@ -7,7 +7,7 @@ import (
 	"encoding/json"
     "io/ioutil"
     "os"
-    // "strconv"
+
 )
 
 type Cat struct {
@@ -22,23 +22,9 @@ type Cats struct {
     Cats []Cat `json:"cats"`
 }
 
-func allCats(w http.ResponseWriter, r *http.Request) {
-	// cats := Cats{
-	// 	Cat  {
-	// 		Name: "Parker",
-	// 		Image: "1.jpg",
-	// 		CutenessLevel: 82,
-	// 		AllergyInducingFur: false,
-	// 		LivesLeft: 8,
-	// 	  },
-	// 	}
-
-	fmt.Println("Endpoint Hit: All Cats Endopoint")
-
-}
 
 func homePage(w http.ResponseWriter, r *http.Request) {
-	// fmt.Fprintf(w, "Homepage Endpoint Hit!")
+
 	// Open our jsonFile
 	jsonFile, err := os.Open("catdata.json")
 	// if we os.Open returns an error then handle it
@@ -71,10 +57,3 @@ func main() {
 
 }
 
-// for i := 0; i < len(cats.Cats); i++ {
-// 	fmt.Println("Cat Name: " + cats.Cats[i].Name)
-// 	fmt.Println("Cat Image: " + cats.Cats[i].Image)
-// 	fmt.Println("Cat CutenessLevel: " + strconv.Itoa(cats.Cats[i].CutenessLevel))
-// 	fmt.Println("Cat AllergyInducingFur: " + strconv.FormatBool(cats.Cats[i].AllergyInducingFur))
-// 	fmt.Println("Cat LivesLeft: " + strconv.Itoa(cats.Cats[i].LivesLeft))
-// }
