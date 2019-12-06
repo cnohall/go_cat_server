@@ -46,7 +46,6 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 
 func handleRequests() {
 	http.HandleFunc("/", homePage)
-	http.HandleFunc("/allCats", allCats)
 	log.Fatal(http.ListenAndServe(":8081",nil))
 }
 
